@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>List of users</title>
+
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.1.0/css/bootstrap.min.css" />
+
+    <!-- Bootstrap core CSS -->
+    <!--  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="CarPlay"><use xlink:href="#bootstrap"/></svg>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a th:href="@{/}" class="nav-link px-2 text-white" >Home</a></li>
+                <li><a th:href="@{/user}" class="nav-link px-2 text-white" >Users</a></li>
+                <li><a th:href="@{/branch}" class="nav-link px-2 text-white">Locations</a></li>
+                <li><a th:href="@{/car}" class="nav-link px-2 text-white">Cars</a></li>
+                <li><a th:href="@{/reservations}" class="nav-link px-2 text-white">Reservations</a></li>
+                <li><a th:href="@{/invoice}" class="nav-link px-2 text-white">Invoice</a></li>
+            </ul>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-secondary-black btn-outline-light">Log In</button>
+                <button type="button" class="btn btn-secondary-black btn-outline-light">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div>
+        <h1>List of branches</h1>
+    </div>
+
+    <div>
+        <table class="table table-dark table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Branch ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Additional information</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="branch: ${branchList}">
+                <td th:text="${branch.id}">ID</td>
+                <td th:text="${branch.name}">Name</td>
+                <td th:text="${branch.city}">City</td>
+                <td th:text="${branch.address}">Address</td>
+                <td th:text="${branch.additionalInfo}">Additional information</td>
+                <td>
+                    <a th:href="@{/}" class="btn" style="background-color: aliceblue" >Edit</a>
+                    <a th:href="@{/}" class="btn" style="background-color: aliceblue">Remove</a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>Add user</title>
+
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.1.0/css/bootstrap.min.css" />
+
+    <!-- Bootstrap core CSS -->
+    <!--  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="CarPlay"><use xlink:href="#bootstrap"/></svg>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a th:href="@{/}" class="nav-link px-2 text-white" >Home</a></li>
+                <li><a th:href="@{/user}" class="nav-link px-2 text-white" >Users</a></li>
+                <li><a th:href="@{/branch}" class="nav-link px-2 text-white">Locations</a></li>
+                <li><a th:href="@{/car}" class="nav-link px-2 text-white">Cars</a></li>
+                <li><a th:href="@{/reservations}" class="nav-link px-2 text-white">Reservations</a></li>
+                <li><a th:href="@{/invoice}" class="nav-link px-2 text-white">Invoice</a></li>
+            </ul>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-secondary-black btn-outline-light">Log In</button>
+                <button type="button" class="btn btn-secondary-black btn-outline-light">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div>
+    <h1>Edit selected user</h1>
+    <a th:href="@{/user/update/}" class="btn" style="background-color: aliceblue">Add</a>
+</div>
+
+    <div>
+        <form action="#" th:action="@{/user/save}" th:object="${newUser}" method="post">
+<!--            <input type="hidden" name="id" value="1"/>-->
+            <label for="email">Email</label>
+            <input type="text" th:field="*{email}" id="email" placeholder="Email">
+            <label for="firstName">First name</label>
+            <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+            <label for="lastName">Last name</label>
+            <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+            <label for="password">Password</label>
+            <input type="password" th:field="*{password}" id="password" placeholder="Password">
+            <label for="role">Role</label>
+            <select>
+                <option
+                        id="role" th:each="roles : ${T(sda.cars.carrental.enums.UserRole).values()}"
+                        th:value="${roles}" th:text="${roles}" >
+                </option>
+            </select>
+            <input type="submit" value="Create user">
+
+        </form>
+
+    </div>
+
+    <script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

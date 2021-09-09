@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<fop version="1.0">
+
+    <fonts>
+        <substitutions>
+            <substitution>
+                <from font-family="Helvetica"/>
+                <to font-family="Exo" font-weight="normal" font-style="normal"/>
+            </substitution>
+        </substitutions>
+    </fonts>
+
+    <font-base>.</font-base>
+    <prefer-renderer>true</prefer-renderer>
+    <renderers>
+        <renderer mime="application/pdf">
+            <fonts>
+
+                <font kerning="yes" embed-url="Architects.ttf">
+                    <font-triplet name="Architects-Medium" style="normal" weight="normal"/>
+                </font>
+
+                <font kerning="yes" embed-url="Capsuula.ttf">
+                    <font-triplet name="Capsuula-Medium" style="normal" weight="normal"/>
+                </font>
+
+                <font kerning="yes" embed-url="Capsuula.ttf">
+                    <font-triplet name="Capsuula" style="normal" weight="bold"/>
+                </font>
+
+                <font kerning="yes" embed-url="Exo-Light.ttf" embedding-mode="subset">
+                    <font-triplet name="Exo" style="normal" weight="normal"/>
+                </font>
+
+                <font kerning="yes" embed-url="Exo-SemiBold.ttf" embedding-mode="subset">
+                    <font-triplet name="Exo" style="normal" weight="bold"/>
+                </font>
+
+            </fonts>
+        </renderer>
+    </renderers>
+</fop>
+

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.87.0">
+  <title>CarPlay</title>
+
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.1.0/css/bootstrap.min.css" />
+
+  <!-- Bootstrap core CSS -->
+<!--  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+</head>
+<body>
+
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="CarPlay"><use xlink:href="#bootstrap"/></svg>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a th:href="@{/}" class="nav-link px-2 text-white" >Home</a></li>
+        <li><a th:href="@{/user}" class="nav-link px-2 text-white" >Users</a></li>
+        <li><a th:href="@{/branch}" class="nav-link px-2 text-white">Locations</a></li>
+        <li><a th:href="@{/car}" class="nav-link px-2 text-white">Cars</a></li>
+        <li><a th:href="@{/reservations}" class="nav-link px-2 text-white">Reservations</a></li>
+        <li><a th:href="@{/invoice}" class="nav-link px-2 text-white">Invoice</a></li>
+      </ul>
+
+      <div class="text-end">
+        <a type="button" th:href="@{/login}" class="btn btn-secondary-black btn-outline-light">Log in</a>
+        <a type="button" th:href="@{/signup}" class="btn btn-secondary-black btn-outline-light">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!--  <div class="album py-5 bg-light">-->
+  <div class="container">
+<!--      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">-->
+
+        <div class="col">
+          <div class="card shadow-sm">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/VW_Passat_CC_2.0_TDI_DSG_Reflexsilber.JPG" width="100%" height="100%">
+
+            <div class="card-body">
+                <table class="table table-dark table-striped">
+                  <thead class="thead-dark">
+                  <tr>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Color</th>
+                    <th>Year</th>
+                    <th>Mileage</th>
+                    <th>Seats</th>
+                    <th>Body Style</th>
+                  </tr>
+                  </thead>
+                  <tr>
+                    <td th:value="${car.brand}" th:text="${car.brand}">Brand</td>
+                    <td th:value="${car.model}" th:text="${car.model}">Model</td>
+                    <td th:value="${car.color}" th:text="${car.color}">Color</td>
+                    <td th:value="${car.year}" th:text="${car.year}">Year</td>
+                    <td th:value="${car.mileage}" th:text="${car.mileage}">Mileage</td>
+                    <td th:value="${car.seatCount}" th:text="${car.seatCount}">Number of seats</td>
+                    <td th:value="${car.bodyType}" th:text="${car.bodyType}">Body Style</td>
+                </tr>
+              </table>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a th:href="@{/car/car-view/{id}(id=${car.id})}" class="btn btn-sm btn-outline-secondary" style="background-color: aliceblue">Make Reservation</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          </tr>
+
+<!--        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/2020_Volkswagen_Golf_Style_1.5_Front.jpg" width="100%" height="225">-->
+
+<!--        <img src="https://www.razaoautomovel.com/wp-content/uploads/2021/01/2021_Volkswagen_Golf_R_02_925x520_acf_cropped.jpg" width="100%" height="225">-->
+
+<!--      </div>-->
+  </div>
+<!--  </div>-->
+
+</main>
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+
+<script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
