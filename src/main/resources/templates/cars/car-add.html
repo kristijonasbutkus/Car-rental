@@ -60,18 +60,48 @@
 
 <main>
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">CarRental</h1>
-        <p class="lead text-muted">CarRental project aims to create a cleaner and more open city. How? One CarRental car that can be
-          shared can replace up to 10 private cars that most of the time stand still and fill neighborhoods and streets.</p>
-        <p>
-          <a th:href="@{/car}" class="btn btn-primary-black my-2 text-secondry-black btn-outline-dark">View Cars</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  <div class="container">
+        <div class="col">
+          <div class="card shadow-sm">
+
+            <img src="" width="100%" height="100%">
+
+            <div>
+              <form action="#" th:action="@{/car/save}" th:object="${newCar}" enctype="multipart/form-data" method="post">
+                <!--            <input type="hidden" name="id" value="1"/>-->
+                <label for="brand">Brand</label>
+                <input type="text" th:field="*{brand}" id="brand" placeholder="Brand">
+                <label for="model">Model</label>
+                <input type="text" th:field="*{model}" id="model" placeholder="Model">
+                <label for="color">Color</label>
+                <input type="text" th:field="*{color}" id="color" placeholder="Color">
+                <label for="year">Year</label>
+                <input type="text" th:field="*{year}" id="year" placeholder="Year">
+                <label for="mileage">Mileage</label>
+                <input type="text" th:field="*{mileage}" id="mileage" placeholder="Mileage">
+                <label for="seats">Seats</label>
+                <input type="text" th:field="*{seatCount}" id="seats" placeholder="Seats">
+                <label for="bodyStyle">Year</label>
+                <input type="text" th:field="*{bodyType}" id="bodyStyle" placeholder="Body Style">
+                <label for="photo">Photo</label>
+                <input type="file" th:field="*{photo}" id="photo" accept="image/png, image/jpeg" />
+
+                <input type="submit" value="Save">
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+          </tr>
+
+<!--        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/2020_Volkswagen_Golf_Style_1.5_Front.jpg" width="100%" height="225">-->
+
+<!--        <img src="https://www.razaoautomovel.com/wp-content/uploads/2021/01/2021_Volkswagen_Golf_R_02_925x520_acf_cropped.jpg" width="100%" height="225">-->
+
+<!--      </div>-->
+  </div>
+<!--  </div>-->
 
 </main>
 
@@ -80,8 +110,8 @@
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
     </p>
-    <p class="mb-1">Website was created by Kristijonas Butkus</p>
-    <p class="mb-0">You can find more projects in <a href="https://github.com/kristijonasbutkus?tab=repositories">Github</a> repository.</p>
+    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
   </div>
 </footer>
 

@@ -44,6 +44,8 @@ public class Cars {
     @Column(name = "price")
     private BigDecimal price;
 
+    @Column(nullable = true, length = 64)
+    private String photo;
 
     public Long getId() {
         return id;
@@ -123,5 +125,13 @@ public class Cars {
 
     public void setMileage(Integer mileage) {
         this.mileage = mileage;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

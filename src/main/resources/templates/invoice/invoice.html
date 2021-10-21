@@ -64,7 +64,7 @@
 <!--</div>-->
 
 <div>
-    <h1>Test list</h1>
+    <h1>You can create invoice here</h1>
     <a th:href="@{/invoice/new}" class="btn" style="background-color: #ff0000">Check invoices</a>
 </div>
 
@@ -86,7 +86,7 @@
 <!--                <button type="button" th:method="PUT" th:href="@{/invoice/api/invoice/print/{id}(id=${invoice.id})}" class="btn btn-secondary-black btn-outline-light">Download</button>-->
 <!--                <a th:href="@{/user/delete/{id}(id=${user.id})}" class="btn" style="background-color: aliceblue">Delete</a>-->
                 <form th:object="${invoice}"
-                      th:action="@{/invoice/api/invoice/print/1}"
+                      th:action="@{/invoice/api/invoice/print/{id}(id=${invoice.id})}"
                       method="get">
 <!--                    <div>-->
 <!--                        <label for="givenName">Given name</label>-->

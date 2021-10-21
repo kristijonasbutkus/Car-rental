@@ -7,10 +7,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-/**
- * change log level at runtime
- * Created by nkcoder on 10/8/16.
- */
 
 public class ChangeLogLevel {
 

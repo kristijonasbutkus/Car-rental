@@ -4,5 +4,5 @@ import sda.cars.carrental.entity.Invoice;
 
 public interface InvoicePrintService {
 
-    public Boolean printOutQR(final Invoice invoice );
+    public Boolean printOutQR( final Invoice invoice );
 }
